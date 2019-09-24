@@ -1,6 +1,7 @@
 class Pandascore {
   constructor() {
-
+    this.team = null;
+    this.stats = null;
   }
 
   getData() {
@@ -20,7 +21,7 @@ class Pandascore {
       },
       error: (response) => {
         console.log(response);
-      }
+      },
 
     }
     $.ajax(ajaxConfig);
