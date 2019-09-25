@@ -1,6 +1,6 @@
 class Pandascore {
   constructor() {
-    this.team = null;
+    this.teams = null;
     this.stats = null;
   }
 
@@ -14,7 +14,6 @@ class Pandascore {
       },
       data: {
 
-      //   search: 'teams',
       },
       success: this.onSuccess,
       error: (response) => {
@@ -26,13 +25,17 @@ class Pandascore {
 
   onSuccess(response) {
     console.log(response);
-    for (let i = 0; i < response.length; i++) {
-      var teamName = response[i].name;
-      var teamDiv = $('<div>').addClass(teamName).text(teamName);
-      $('.teams').append(teamDiv);
+    this.teams = response;
+  }
+
+  clickHandler() {
+      for (let i = 0; i < this.teams.length; i++) {
+        var teamName = this.teams[i].name;
+        var teamDiv = $('<div>').addClass(teamName).text(teamName);
+        $('.teams').append(teamDiv);
+      }
     }
   }
-}
 
 // var csgoTeams = new Pandascore();
 // csgoTeams.getData();
