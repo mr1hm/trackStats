@@ -2,6 +2,8 @@ class Pandascore {
   constructor() {
     this.teams = null;
     this.stats = null;
+    this.clickHandler = this.clickHandler.bind(this);
+    this.onSuccess = this.onSuccess.bind(this);
   }
 
   getData() {
@@ -24,6 +26,7 @@ class Pandascore {
   }
 
   onSuccess(response) {
+    debugger;
     console.log(response);
     this.teams = response;
   }
