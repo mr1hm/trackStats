@@ -20,7 +20,6 @@ class Pandascore {
       error: (response) => {
         console.log(response);
       },
-
     }
     $.ajax(ajaxConfig);
   }
