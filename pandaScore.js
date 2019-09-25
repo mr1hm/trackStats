@@ -14,9 +14,9 @@ class Pandascore {
       headers: {
         Authorization: `Bearer bZHwdBze71eTDAcMfKzZrv56P5Bh4D7JCqyfuY7yM9KnyRPbDz4`,
       },
-      data: {
+      // data: {
 
-      },
+      // },
       success: this.onSuccess,
       error: (response) => {
         console.log(response);
@@ -26,19 +26,29 @@ class Pandascore {
   }
 
   onSuccess(response) {
-    debugger;
     console.log(response);
     this.teams = response;
+    this.clickHandler();
+    this.appendTeamImages();
   }
 
   clickHandler() {
-      for (let i = 0; i < this.teams.length; i++) {
-        var teamName = this.teams[i].name;
-        var teamDiv = $('<div>').addClass(teamName).text(teamName);
-        $('.teams').append(teamDiv);
-      }
+    for (let i = 0; i < this.teams.length; i++) {
+      var teamName = this.teams[i].name;
+      var teamDiv = $('<div>').addClass('team').text(teamName);
+      teamDiv.attr('id', 'team' + i);
+      $('.teams').append(teamDiv);
     }
   }
 
-// var csgoTeams = new Pandascore();
-// csgoTeams.getData();
+  appendTeamImages() {
+    for (let i = 0; i < this.teams.length; i++) {
+      var teamImg = this.teams[i]['image_url'];
+      var newImg = $('<img>').attr('src', teamImg).addClass('img');
+      $('#team' + i).css({
+        'background-image': 'url(' + teamImg + ')',
+      });
+    }
+  }
+
+}
