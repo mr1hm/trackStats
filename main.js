@@ -2,7 +2,8 @@ $(document).ready(init);
 
 function init() {
   var csgoTeams = new Pandascore();
-  csgoTeams.getData();
+  csgoTeams.getTeamData();
+  csgoTeams.getMatchData();
   $('.proTeams').click(function() {
     $('.modal').removeClass('hidden');
   });
