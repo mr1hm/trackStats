@@ -6,19 +6,17 @@ class Pandascore {
 
   getData() {
     var ajaxConfig = {
-      url: 'https://api.pandascore.co/csgo/teams',
+      url: './pandaScore.php',
       dataType: 'json',
       method: 'get',
       headers: {
         Authorization: `Bearer bZHwdBze71eTDAcMfKzZrv56P5Bh4D7JCqyfuY7yM9KnyRPbDz4`,
       },
       data: {
-        game: 'csgo',
-        search: 'teams',
+
+      //   search: 'teams',
       },
-      success: (response) => {
-        console.log(response);
-      },
+      success: this.onSuccess,
       error: (response) => {
         console.log(response);
       },
@@ -26,4 +24,16 @@ class Pandascore {
     }
     $.ajax(ajaxConfig);
   }
+
+  onSuccess(response) {
+    console.log(response);
+    for (let i = 0; i < response.length; i++) {
+      var teamName = response[i].name;
+      var teamDiv = $('<div>').addClass(teamName).text(teamName);
+      $('.teams').append(teamDiv);
+    }
+  }
 }
+
+// var csgoTeams = new Pandascore();
+// csgoTeams.getData();
