@@ -6,7 +6,7 @@ class Pandascore {
     this.onSuccess = this.onSuccess.bind(this);
   }
 
-  getData() {
+  getTeamData() {
     var ajaxConfig = {
       url: './pandaScore.php',
       dataType: 'json',
@@ -44,11 +44,29 @@ class Pandascore {
   appendTeamImages() {
     for (let i = 0; i < this.teams.length; i++) {
       var teamImg = this.teams[i]['image_url'];
-      var newImg = $('<img>').attr('src', teamImg).addClass('img');
+      // var newImg = $('<img>').attr('src', teamImg).addClass('img');
       $('#team' + i).css({
         'background-image': 'url(' + teamImg + ')',
       });
     }
+  }
+
+  getMatchData() {
+    var ajaxConfig = {
+      url: './pandaScoreMatch.php',
+      dataType: 'json',
+      method: 'get',
+      headers: {
+        Authorization: `Bearer bZHwdBze71eTDAcMfKzZrv56P5Bh4D7JCqyfuY7yM9KnyRPbDz4`,
+      },
+      success: (response) => {
+        console.log('Match data: ', response);
+      },
+      error: (response) => {
+        console.log('Match data error:', response);
+      },
+    }
+    $.ajax(ajaxConfig);
   }
 
 }
