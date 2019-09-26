@@ -14,9 +14,6 @@ class Pandascore {
       headers: {
         Authorization: `Bearer bZHwdBze71eTDAcMfKzZrv56P5Bh4D7JCqyfuY7yM9KnyRPbDz4`,
       },
-      // data: {
-
-      // },
       success: this.onSuccess,
       error: (response) => {
         console.log(response);
