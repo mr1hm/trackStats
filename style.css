@@ -85,6 +85,7 @@ header {
   justify-content: center;
   justify-items: space-evenly;
   width: 50%;
+  height: 800px;
 }
 
 .upcomingMatches {
@@ -93,7 +94,7 @@ header {
   justify-items: center;
   left: 25%;
   width: 50%;
-  height: 800px;
+  height: 50%;
 }
 
 .hidden {
