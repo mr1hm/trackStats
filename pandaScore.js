@@ -58,7 +58,8 @@ class Pandascore {
         Authorization: `Bearer bZHwdBze71eTDAcMfKzZrv56P5Bh4D7JCqyfuY7yM9KnyRPbDz4`,
       },
       success: (response) => {
-        console.log('Match data: ', response);
+        this.upcomingMatches = response;
+        console.log('Match data: ', this.upcomingMatches);
         var upcomingMatches = new Matches(this.upcomingMatches);
         upcomingMatches.appendMatches();
       },
