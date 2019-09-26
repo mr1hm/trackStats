@@ -3,8 +3,20 @@ body {
   height: 100%;
 }
 
+.modalContainer {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-content: flex-end;
+  border: 2px solid gray;
+  width: 1200px;
+  height: 1000px;
+  left: 7%;
+  background-color: rgba(148, 141, 141, 0.8);
+}
+
 .modal {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(148, 141, 141, 0.8);
   font-family: 'Vollkorn SC', serif;
   font-weight: 700;
   color: white;
@@ -12,8 +24,9 @@ body {
                2px 2px black,
                3px 3px black;
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   justify-content: space-evenly;
+  align-self: center;
   flex-flow: wrap;
   width: 1000px;
   height: 800px;
@@ -43,14 +56,15 @@ body {
 .upcomingMatchesContainer {
   display: flex;
   border: 1px solid black;
+  justify-content: flex-end;
 }
 
 .upcomingMatches {
   display: flex;
   left: 25%;
   background-color: gray;
-  width: 400px;
-  height: 400px;
+  width: 50%;
+  height: 800px;
 }
 
 .hidden {

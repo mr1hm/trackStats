@@ -4,6 +4,7 @@ class Pandascore {
     this.stats = null;
     this.clickHandler = this.clickHandler.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
+    this.upcomingMatches = null;
   }
 
   getTeamData() {
@@ -58,6 +59,8 @@ class Pandascore {
       },
       success: (response) => {
         console.log('Match data: ', response);
+        var upcomingMatches = new Matches(this.upcomingMatches);
+        upcomingMatches.appendMatches();
       },
       error: (response) => {
         console.log('Match data error:', response);
