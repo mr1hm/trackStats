@@ -5,6 +5,7 @@ body {
 
 header {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -18,6 +19,9 @@ header {
 
 .mainContainer {
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -69,8 +73,10 @@ header {
 
 .match {
   display: flex;
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: 20%;
+  justify-content: center;
+  font-family: 'Vollkorn SC', serif;
 }
 
 .img {
@@ -83,7 +89,7 @@ header {
   background-color: gray;
   border: 1px solid black;
   justify-content: center;
-  justify-items: space-evenly;
+  align-items: center;
   width: 50%;
   height: 800px;
 }
@@ -91,10 +97,9 @@ header {
 .upcomingMatches {
   display: flex;
   border: 2px white dotted;
-  justify-items: center;
-  left: 25%;
-  width: 50%;
-  height: 50%;
+  justify-content: center;
+  width: 90%;
+  height: 90%;
 }
 
 .hidden {
