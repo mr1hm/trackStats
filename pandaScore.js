@@ -8,7 +8,7 @@ class Pandascore {
 
   getTeamData() {
     var ajaxConfig = {
-      url: './pandaScore.php',
+      url: './pandaScoreTeams.php',
       dataType: 'json',
       method: 'get',
       headers: {
