@@ -61,6 +61,7 @@ class Pandascore {
         this.upcomingMatches = response;
         console.log('Match data: ', this.upcomingMatches);
         var upcomingMatches = new Matches(this.upcomingMatches);
+        upcomingMatches.getDate();
         upcomingMatches.appendMatches();
       },
       error: (response) => {
