@@ -71,6 +71,16 @@ header {
   font-size: 15px;
 }
 
+.noMatches {
+  display: flex;
+  flex-flow: wrap;
+  border: 1px solid black;
+  width: 100%;
+  height: 20%;
+  justify-content: center;
+  font-family: 'Vollkorn SC', serif;
+}
+
 .match {
   display: flex;
   flex-flow: wrap;
