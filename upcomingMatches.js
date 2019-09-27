@@ -6,12 +6,15 @@ class Matches {
 
   appendMatches() {
     for (let i = 0; i < this.data.length; i++) {
+      var teamNames = this.data[i].name;
       var scheduledTime = this.data[i]['begin_at'];
       var slicedDate = scheduledTime.slice(0, 10);
-      var slicedTime = scheduledTime.slice(9, 19);
+      var slicedTime = scheduledTime.slice(11, 19);
       if (slicedDate === this.date) {
-        var matchDiv = $('<div>').addClass('match').attr('id', i).text(this.data[i].name);
+        var matchDiv = $('<div>').addClass('match').attr('id', 'match' + i).html(this.data[i].name);
+        var matchP = $('<p>').addClass('time').text(slicedTime);
         $('.upcomingMatches').append(matchDiv);
+        $('#match1').append(matchP);
       }
     }
   }
