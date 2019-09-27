@@ -17,6 +17,10 @@ class Matches {
         $('#match1').append(matchP);
       }
     }
+    if (slicedDate !== this.date) {
+      var noMatchesDiv = $('<div>').addClass('noMatches').text('Booooooo, no matches today :(');
+      $('.upcomingMatches').append(noMatchesDiv);
+    }
   }
 
   getDate() {
