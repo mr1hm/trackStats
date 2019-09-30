@@ -23,6 +23,10 @@ class Matches {
     }
   }
 
+  getTeamImages() {
+
+  }
+
   getDate() {
     var date = new Date();
     var today = date.getDate();
